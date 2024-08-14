@@ -21,9 +21,9 @@ const Addstudent = () =>{
                 userDOB:yup.string().required(),
                 Gender:yup.string().required(),
                 class:yup.string().required(),
-                marks1:yup.number().required(),
-                marks2:yup.number().required(),
-                marks3:yup.number().required(),
+                marks1:yup.number().required().min(0).max(100),
+                marks2:yup.number().required().min(0).max(100),
+                marks3:yup.number().required().min(0).max(100),
              })}
              onSubmit={(formdata, { resetForm }) => {
                 try{
@@ -88,7 +88,7 @@ const Addstudent = () =>{
                             <dd><Field type='number' name='marks3' placeholder='Enter marks3' className='form-control' /></dd>
                             <dd className='text-danger'><ErrorMessage name='marks3' /></dd>
                             <hr />
-                            <dd className='d-flex justify-content-between'><button className='btn btn-success' type='submit' >Update</button><button type='resert' className='btn btn-warning'>Resert</button></dd>
+                            <dd className='d-flex justify-content-between'><button className='btn btn-success' type='submit' >Update</button><button type='reset' className='btn btn-warning'>Resert</button></dd>
                         </dl>
                     </Form>
                 }
